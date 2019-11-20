@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# do not contain Keras weight file as well as ONNX
+*.h5
+*.onnx

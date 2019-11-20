@@ -1,0 +1,6 @@
+numpy
+tensorflow==1.13.1
+keras==2.1.6
+pillow
+keras2onnx
+onnxruntime
