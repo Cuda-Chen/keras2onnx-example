@@ -10,8 +10,9 @@ IMAGE_SIZE = 224
 
 img_path = sys.argv[1]
 
-net = load_model('model-resnet50-final.h5')
-onnx_net = keras2onnx.convert_keras(net, net.name)
+#net = load_model('model-resnet50-final.h5')
+#onnx_net = keras2onnx.convert_keras(net, net.name)
+onnx_model = 'fish-resnet50.onnx'
 
 # 41 + 1 classes
 cls_list = ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
@@ -25,8 +26,9 @@ x = image.img_to_array(img)
 x = np.expand_dims(x, axis=0)
 
 # runtime prediction
-content = onnx_net.SerializeToString()
-sess = onnxruntime.InferenceSession(content)
+#content = onnx_net.SerializeToString()
+#sess = onnxruntime.InferenceSession(content)
+sess = onnxruntime.InferenceSession(onnx_model)
 x = x if isinstance(x, list) else [x]
 feed = dict([(input.name, x[n]) for n, input in enumerate(sess.get_inputs())])
 pred_onnx = sess.run(None, feed)[0]
