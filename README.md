@@ -9,7 +9,7 @@ $ conda create -n keras2onnx-example python=3.6 pip
 $ conda activate keras2onnx-example
 $ pip install -r requirements.txt
 $ python convert_keras_to_onnx.py
-$ python main.py 3_001_1.bmp
+$ python main.py 3_001_0.bmp
 ```
 And it should output the following messages in the end:
 ```
