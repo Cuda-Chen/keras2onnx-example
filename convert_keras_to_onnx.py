@@ -1,6 +1,8 @@
 from tensorflow.python.keras import backend as K
 from tensorflow.python.keras.models import load_model
 import onnx
+import os
+os.environ['TF_KERAS'] = '1'
 import keras2onnx
 
 onnx_model_name = 'fish-resnet50.onnx'
