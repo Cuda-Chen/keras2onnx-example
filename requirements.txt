@@ -1,5 +1,5 @@
 numpy
-tensorflow==1.13.1
+tensorflow==2.6.4
 keras==2.1.6
 pillow
 keras2onnx==1.7.0
